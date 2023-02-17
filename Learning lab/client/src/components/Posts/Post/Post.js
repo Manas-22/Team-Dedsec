@@ -9,14 +9,19 @@ import {useDispatch} from 'react-redux'
 import {deletePost,likePost} from '../../../actions/posts'
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import ChatIcon from '@mui/icons-material/Chat';
+// import ROOM_ID from '../../../video-call/views/room.ejs'
+// window.alert(ROOM_ID);
+
 const Post = ({post,setCurrentId}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   // const changePage = () => {
-  //   window.location.href = "https://www.youtube.com";
-  // }
-  return (
-    <div>
+    //   window.location.href = "https://www.youtube.com";
+    // }
+    // const rom = window.ROOM_ID;
+    // window.alert(rom);
+    return (
+      <div>
       <Card className={classes.card}>
         <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
         <div className={classes.overlay}>
@@ -45,9 +50,11 @@ const Post = ({post,setCurrentId}) => {
             <DeleteIcon fontSize='small'/>
             Delete
           </Button>
-          <Button size='small' color='primary' onClick={()=>{window.location.href = "https://hicmuhvlje.execute-api.us-east-2.amazonaws.com/"}}>
+          <Button size='small' color='primary'>
             <VideoCallIcon fontSize='small'/>
             Join
+            {/* <a href="http://localhost:3030/f3de3a8a-7366-44ce-8f26-ec06006dae83" target="_blank" style={{color:'inherit',textDecoration:'none'}}>
+            </a> */}
           </Button>
           <Button size='small' color='primary' onClick={()=>{window.location.href = ""}}>
             <ChatIcon fontSize='small'/>
